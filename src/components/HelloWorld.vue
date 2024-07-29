@@ -132,6 +132,24 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 @Component
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
+  firstString: string = "Hello";
+  firstNumber: number = 2;
+  firstBoolean: boolean = true;
+
+  myFunction(a: string, b: number) {
+    console.log(a, b);
+    const c = false;
+    return c;
+  }
+  booleanFunction(a: boolean): boolean {
+    return a;
+  }
+  created() {
+    console.log(
+      this.myFunction("Hello", 3),
+      this.booleanFunction(this.firstBoolean)
+    );
+  }
 }
 </script>
 
